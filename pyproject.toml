@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "redaction-rlvr"
+version = "0.1.0"
+description = "Sensitive-data redaction with LLM fine-tuning from verifiable rewards."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "redaction-rlvr contributors" }]
+dependencies = []
+
+[project.optional-dependencies]
+train = [
+  "accelerate>=0.34",
+  "datasets>=2.20",
+  "peft>=0.12",
+  "torch>=2.3",
+  "transformers>=4.44",
+  "trl>=0.11",
+]
+notebook = [
+  "ipykernel>=6.29",
+  "jupyter>=1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
